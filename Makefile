@@ -46,7 +46,7 @@ TARGET=APP_CY8CPROTO-062-4343W
 #
 # If APPNAME is edited, ensure to update or regenerate launch
 # configurations for your IDE.
-APPNAME=mtb-example-empty-app
+APPNAME=mtb-xensiv-3d-magnetic-sensor-tlx493d
 
 # Name of toolchain to use. Options include:
 #
