@@ -58,3 +58,15 @@ After you did the steps mentioned above, you're ready to use the library with al
 With the steps mentioned in the "How to get started" section you will build the default example, which is a very simple I2C example for the TLE493D-P3B6 of the third generation. Following, is an explanation on how you can change the example to your desired one. In order to do that, you simply have to change the value of the `#define EXAMPLE` to the desired example. You can see a list of all available examples in the enumeration ` examples_t `. The documentation of each example can be found the in corresponding folders directly in the code.
 
 Whenever you have decided for a desired example and changed the code accordingly, you can simply re-build the project and program your connect hardware again.
+
+## Supported Kits
+The library was tested with the following boards, but should be compatible with all boards, which support the PSoC6™ HAL.
+
+* [PSoC™ 6 Wi-Fi Bluetooth® Prototyping Kit (CY8CPROTO-062-4343W)](https://www.infineon.com/cms/en/product/evaluation-boards/cy8cproto-062-4343w/)
+* [PSoC™ 62S2 Wi-Fi BT Pioneer Kit (CY8CKIT-062S2-43012)](https://www.infineon.com/cms/de/product/evaluation-boards/cy8ckit-062s2-43012/)
+* [PSoC™ 6 Artificial Intelligence Evaluation Kit (CY8CKIT-062S2-AI)](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/)
+
+> [!WARNING]
+> If you choose a different PSoC™ kit for your project, other than the boards mentioned above, you have to make sure to use valid pins for the I2C and SPI communication interface. Otherwise, there is a chance that the device will not function properly.
+
+[Here](https://www.infineon.com/cms/en/search.html#!view=downloads&term=psoc6&doc_group=Data%20Sheet) you can find an overview of all the PSoC™ 6 MCU datasheets. In the section "Pinouts" you can usually find a good overview which pin is available for which functionality (e.g. UART, SPI, I2C).
