@@ -25,7 +25,16 @@ Now you should she the following window. Here you have to click on *"Browse ..."
 
 ![](docs/img/MTB-Project-Information.png)
 
-Now you should see you file explorer. Here, you have to select the repository folder and click on *"Select Folder"*. After a few seconds the project should be included and you should be able to see it in the "Project Explorer" of the ModusToolbox™. If everything worked out so far you just have to do a double-click on the folder in the "Project Explorer". This will set the project as active project. With that you should be able to build the project with the *"Build Project"* button of the ModusToolbox™ in the *"Quick Panel"*:
+Now you should see you file explorer. Here, you have to select the repository folder and click on *"Select Folder"*. After a few seconds the project should be included and you should be able to see it in the "Project Explorer" of the ModusToolbox™. If everything worked out so far you just have to do a double-click on the folder in the "Project Explorer". This will set the project as active project. Now you should the options "Build Project" and "Clean Project" in the "Quick Panel" of the ModusToolbox™. Before you can build the project successfully, you have to get the resources of the core library. This can easily be done with the following command:
+```
+make getlibs
+```
+
+The easiest way to execute this command is using the integrated terminal of the ModusToolbox™. It can be found at the bottom of the interface. Here is a picture of it:
+
+![](docs/img/MTB-Terminal.png)
+
+With that done you can now build the project with the "Build Project" button in the "Quick Panel" of the ModusToolbox™.
 
 ![](docs/img/MTB-Build-Project.png)
 
@@ -39,8 +48,11 @@ Now you can connect your PSoC® to your PC and choose either of the two options 
 If you already have an existing ModusToolbox™ project and want to add the library to it, then you have to do the following steps:
 
 - First of all clone the repository into your desired location.
-- Then you have to copy the complete folder *framework* from the cloned repository into your project, here it is not important where you put it.
-- In order to use the ModusToolbox™ drivers we need to add the core library of the XENSIV™ 3D Magnetic Sensor family to the project. This can easily done by creating the necessary file in the *deps* folder of your project. 
+- Then you have to copy the complete folder *libs/mtb-xensiv-3d-magnetic-sensor-tlx493d-wrapper* from the cloned repository into your project, here it is not important where you put it.
+- In order to use the ModusToolbox™ drivers we need to add the core library of the XENSIV™ 3D Magnetic Sensor family to the project as well. This can easily done by creating the necessary file in the *deps* folder of your project.
+- Execute the command `make getlibs` again to retrieve the necessary resources.
+
+After you did the steps mentioned above, you're ready to use the library with all its features.
 
 ## Choose a different example
 With the steps mentioned in the "How to get started" section you will build the default example, which is a very simple I2C example for the TLE493D-P3B6 of the third generation. Following, is an explanation on how you can change the example to your desired one. In order to do that, you simply have to change the value of the `#define EXAMPLE` to the desired example. You can see a list of all available examples in the enumeration ` examples_t `. The documentation of each example can be found the in corresponding folders directly in the code.
