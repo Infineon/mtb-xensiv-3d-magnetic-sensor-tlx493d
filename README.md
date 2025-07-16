@@ -12,7 +12,10 @@ This example is compiled for the CY8CPROTO-062-4343W with the TLE493D-P3B6 senso
 | GND           | GND                    |
 | SDA           | P6.0 I2C SDA           |
 | SCL           | P6.1 I2C SCL           |
+
+
 Connect your sensor with your micro controller like in this picture. 
+<br>
  
 
 ![](docs/img/MTB-Sensor-CY8CPROTO-062-4343W.png)
