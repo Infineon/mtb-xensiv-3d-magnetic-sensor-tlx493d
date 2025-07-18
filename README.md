@@ -78,6 +78,29 @@ With the steps mentioned in the "How to get started" section you will build the 
 
 Whenever you have decided for a desired example and changed the code accordingly, you can simply re-build the project and program your connect hardware again.
 
+## Viewing 3D Magnetic Values in the Serial Monitor in ModusToolbox™
+
+To view the 3D magnetic values, open the Serial Monitor by clicking on the terminal button located at the top of the interface, as shown in the image below.
+
+![](docs/img/MTB-Where-Terminal.png)
+
+After opening the Serial Monitor, select the appropriate COM port from the dropdown menu. Ensure that the correct port corresponding to your device is chosen.
+<br>
+Click "OK" to confirm your selection.
+
+![](docs/img/MTB-Select-COM-PORT.png)
+
+Navigate to the terminal button located at the bottom right of the interface.
+<br>
+Click on this button to open the COM window, where you will be able to view the 3D magnetic values.
+
+![](docs/img/MTB-Terminal-Values.png)
+
+
+
+
+
+
 ## Supported Kits
 The library was tested with the following boards, but should be compatible with all boards, which support the PSOC6™ HAL.
 
