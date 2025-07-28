@@ -3,9 +3,28 @@ This repository contains several examples for the XENSIV™ 3D Magnetic Sensor f
 
 > [!IMPORTANT]
 > This is not an official example of the ModusToolbox™ and will therefore not be available through the ModusToolbox™ project creation tool. Also the necessary wrappers cannot be obtained through the library manager of the ModusToolbox™. You will find detailed instructions on how to use this repository in the following sections.
+This example is compiled for the CY8CPROTO-062-4343W with the TLE493D-P3B6 sensor connected.
+
+## Hardware Connection
+| Pin on Sensor | Pin on Microcontroller |
+|---------------|------------------------|
+| VDD1          | 3.3V / P6 VDD          |
+| GND           | GND                    |
+| SDA           | P6.1 I2C SDA           |
+| SCL           | P6.0 I2C SCL           |
+
+
+Connect your sensor with your micro controller like in this picture. 
+<br>
+ 
+
+![](docs/img/MTB-Sensor-CY8CPROTO-062-4343W.png)
+
 
 ## How to get started
-The repository contains all necessary files, which are required to setup a working project in the ModusToolbox™. Therefore, the first step is to clone this repository into the desired location on your computer. To make things easier you can simply clone the repository in your default project folder of the ModusToolbox™. On a windows machine it is usually the following location:
+Before you begin, make sure you have ModusToolbox™ installed on your computer. You can download the latest version from the [Infineon ModusToolbox™ website](https://www.infineon.com/cms/en/design-support/tools/sdk/modustoolbox-software/). Follow the installation instructions provided for your operating system.
+<br>
+This repository contains all necessary files, which are required to setup a working project in the ModusToolbox™. Therefore, the first step is to clone this repository into the desired location on your computer. To make things easier you can simply clone the repository in your default project folder of the ModusToolbox™. On a windows machine it is usually the following location:
 ```
 C:\Users\yourUsername\mtw
 ```
@@ -16,7 +35,7 @@ If you have configured any other default location you can use it instead. You ca
 git clone https://github.com/Infineon/mtb-xensiv-3d-magnetic-sensor-tlx493d.git
 ```
 
-Or get a .ZIP-file directly from Github and put it in the corresponding folder.
+Or get a .ZIP-file directly from Github, unpack the .ZIP-file, and put it in the corresponding folder.
 With that done, you can now open the ModusToolbox™ and click on *"Import Existing Application In-Place"* in the lower, left corner:
 
 ![](docs/img/MTB-Import-Existing-Project.png)
@@ -42,7 +61,7 @@ This will build your project and will also gather all necessary resources, for e
 
 ![](docs/img/MTB-Program-Debug.png)
 
-Now you can connect your PSoC® to your PC and choose either of the two options to deploy the code to the hardware.
+Now you can connect your PSOC® to your PC and choose either of the two options to deploy the code to the hardware.
 
 ## Integrate library into existing ModusToolbox™ project
 If you already have an existing ModusToolbox™ project and want to add the library to it, then you have to do the following steps:
@@ -59,14 +78,37 @@ With the steps mentioned in the "How to get started" section you will build the 
 
 Whenever you have decided for a desired example and changed the code accordingly, you can simply re-build the project and program your connect hardware again.
 
-## Supported Kits
-The library was tested with the following boards, but should be compatible with all boards, which support the PSoC6™ HAL.
+## Viewing 3D Magnetic Values in the Serial Monitor in ModusToolbox™
 
-* [PSoC™ 6 Wi-Fi Bluetooth® Prototyping Kit (CY8CPROTO-062-4343W)](https://www.infineon.com/cms/en/product/evaluation-boards/cy8cproto-062-4343w/)
-* [PSoC™ 62S2 Wi-Fi BT Pioneer Kit (CY8CKIT-062S2-43012)](https://www.infineon.com/cms/de/product/evaluation-boards/cy8ckit-062s2-43012/)
-* [PSoC™ 6 Artificial Intelligence Evaluation Kit (CY8CKIT-062S2-AI)](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/)
+To view the 3D magnetic values, open the Serial Monitor by clicking on the terminal button located at the top of the interface, as shown in the image below.
+
+![](docs/img/MTB-Where-Terminal.png)
+
+After opening the Serial Monitor, select the appropriate COM port from the dropdown menu. Ensure that the correct port corresponding to your device is chosen.
+<br>
+Click "OK" to confirm your selection.
+
+![](docs/img/MTB-Select-COM-PORT.png)
+
+Navigate to the terminal button located at the bottom right of the interface.
+<br>
+Click on this button to open the COM window, where you will be able to view the 3D magnetic values.
+
+![](docs/img/MTB-Terminal-Values.png)
+
+
+
+
+
+
+## Supported Kits
+The library was tested with the following boards, but should be compatible with all boards, which support the PSOC6™ HAL.
+
+* [PSOC™ 6 Wi-Fi Bluetooth® Prototyping Kit (CY8CPROTO-062-4343W)](https://www.infineon.com/cms/en/product/evaluation-boards/cy8cproto-062-4343w/)
+* [PSOC™ 62S2 Wi-Fi BT Pioneer Kit (CY8CKIT-062S2-43012)](https://www.infineon.com/cms/de/product/evaluation-boards/cy8ckit-062s2-43012/)
+* [PSOC™ 6 Artificial Intelligence Evaluation Kit (CY8CKIT-062S2-AI)](https://www.infineon.com/cms/en/product/evaluation-boards/cy8ckit-062s2-ai/)
 
 > [!WARNING]
-> If you choose a different PSoC™ kit for your project, other than the boards mentioned above, you have to make sure to use valid pins for the I2C and SPI communication interface. Otherwise, there is a chance that the device will not function properly.
+> If you choose a different PSOC™ kit for your project, other than the boards mentioned above, you have to make sure to use valid pins for the I2C and SPI communication interface. Otherwise, there is a chance that the device will not function properly.
 
-[Here](https://www.infineon.com/cms/en/search.html#!view=downloads&term=psoc6&doc_group=Data%20Sheet) you can find an overview of all the PSoC™ 6 MCU datasheets. In the section "Pinouts" you can usually find a good overview which pin is available for which functionality (e.g. UART, SPI, I2C).
+[Here](https://documentation.infineon.com/psoc6/docs/bnm1651211483724/index.html) you can find an overview of all the PSOC™ 6 MCU datasheets. In the section "Pinouts" you can usually find a good overview which pin is available for which functionality (e.g. UART, SPI, I2C).
