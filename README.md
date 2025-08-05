@@ -17,12 +17,12 @@ In this guide we use the [CY8CPROTO-062-4343W](https://www.infineon.com/evaluati
 
 Connect the sensor to the microcontroller as shown in the image below.
 
-![connection diagram](docs/img/MTB-Sensor-CY8CPROTO-062-4343W.png | width = 300)
+![connection diagram](docs/img/MTB-Sensor-CY8CPROTO-062-4343W.png)
 
 ## How to get started
 Before you begin, make sure you have ModusToolbox™ installed on your computer. You can download the latest version from [here](https://www.infineon.com/cms/en/design-support/tools/sdk/modustoolbox-software/). Follow the installation instructions provided for your operating system.
 <br>
-This repository contains all necessary files, which are required to setup a working project in the ModusToolbox™. Therefore, the first step is to clone this repository into the desired location on your computer. To make things easier you can simply clone the repository in your default project folder of the ModusToolbox™. On a Windows machine it is usually the following location:
+This repository contains all necessary files, which are required to setup a working project in ModusToolbox™. Therefore, the first step is to clone this repository into the desired location on your computer. To make things easier you can simply clone the repository in your default project folder of ModusToolbox™. On a Windows machine it is usually the following location:
 ```
 %userprofile%\mtw
 ```
@@ -34,28 +34,28 @@ git clone https://github.com/Infineon/mtb-xensiv-3d-magnetic-sensor-tlx493d.git
 ```
 
 Or download it as .ZIP-file directly from GitHub, unpack the .ZIP-file, and put it in the corresponding folder.
-With that done, you can now open the ModusToolbox™ and click on *"Import Existing Application In-Place"* in the lower, left corner:
+With that done, you can now open ModusToolbox™ and click on *"Import Existing Application In-Place"* in the lower, left corner:
 
 ![](docs/img/MTB-Import-Existing-Project.png)
 
-Now you should she the following window. Here you have to click on *"Browse ..."*:
+Now you should see the following window. Here you have to click on *"Browse ..."*:
 
 ![](docs/img/MTB-Project-Information.png)
 
-Now you should see your file explorer. Here, you have to select the repository folder and click on *"Select Folder"*. After a few seconds the project should be included and you should be able to see it in the "Project Explorer" of the ModusToolbox™. If everything worked out so far you just have to do a double-click on the folder in the "Project Explorer". This will set the project as active project. Now you should see the options "Build Project" and "Clean Project" in the "Quick Panel" of the ModusToolbox™. Before you can build the project successfully, you have to get the resources of the core library. This can easily be done with the following command:
+Now you should see your file explorer. Here, you have to select the repository folder and click on *"Select Folder"*. After a few seconds the project should be included and you should be able to see it in the "Project Explorer" of ModusToolbox™. If everything worked out so far you just have to do a double-click on the folder in the "Project Explorer". This will set the project as active project. Now you should see the options "Build Project" and "Clean Project" in the "Quick Panel" of ModusToolbox™. Before you can build the project successfully, you have to get the resources of the core library. This can easily be done with the following command:
 ```
 make getlibs
 ```
 
-The easiest way to execute this command is using the integrated terminal of the ModusToolbox™. It can be found at the bottom of the interface. Here is a picture of it:
+The easiest way to execute this command is using the integrated terminal of ModusToolbox™. It can be found at the bottom of the interface. Here is a picture of it:
 
 ![](docs/img/MTB-Terminal.png)
 
-With that done, you can now build the project with the "Build Project" button in the "Quick Panel" of the ModusToolbox™.
+With that done, you can now build the project with the "Build Project" button in the "Quick Panel" of ModusToolbox™.
 
 ![](docs/img/MTB-Build-Project.png)
 
-This will build your project and will also gather all necessary resources, for example the core library of the XENSIV™ 3D Magnetic sensors. After you have successfully build the project you should now the see the options to "Program" or "Debug" the selected project in the "Quick Panel" tab of the ModusToolbox™:
+This will build your project and will also gather all necessary resources, for example the core library of the XENSIV™ 3D Magnetic sensors. After you have successfully built the project you should now see the options to "Program" or "Debug" the selected project in the "Quick Panel" tab of ModusToolbox™:
 
 ![](docs/img/MTB-Program-Debug.png)
 
@@ -64,15 +64,18 @@ Now you can connect your PSOC™ 6 to your PC and choose either of the two optio
 ## Integrate Library into existing ModusToolbox™ Project
 If you already have an existing ModusToolbox™ project and want to add the library to it, then you have to do the following steps:
 
-- First of all clone the repository into your desired location.
-- Then you have to copy the complete folder *libs/mtb-xensiv-3d-magnetic-sensor-tlx493d-wrapper* from the cloned repository into your project, here it is not important where you put it.
-- In order to use the ModusToolbox™ drivers we need to add the core library of the XENSIV™ 3D Magnetic Sensor family to the project as well. This can easily done by creating the necessary file in the *deps* folder of your project.
+- First, clone the repository into your desired location.
+- Then copy the complete folder *libs/mtb-xensiv-3d-magnetic-sensor-tlx493d-wrapper* from the cloned repository into your project's *libs* folder.
+- In order to use the ModusToolbox™ drivers we need to add the core library of the XENSIV™ 3D Magnetic Sensor family to the project as well. This can easily be done by creating a file named *xensiv-3d-magnetic-sensor-tlx493d.mtb* in the *deps* folder of your project with the following content:
+  ```
+  https://github.com/Infineon/xensiv-3d-magnetic-sensor-tlx493d#latest-v4.X
+  ```
 - Execute the command `make getlibs` again to retrieve the necessary resources.
 
-After you did the steps mentioned above, you're ready to use the library with all its features.
+After completing these steps, you're ready to use the library with all its features.
 
 ## Choose a different Example
-With the steps mentioned in the "How to get started" section you will build the default example, which is a very simple I2C example for the TLE493D-P3B6 sensor of the third generation. Following is an explanation on how you can change the example to your desired one. In order to do that, you simply have to change the value of the `#define EXAMPLE` macro to the desired example. You can see a list of all available examples in the enumeration `examples_t`. The documentation of each example can be found the in corresponding folders directly in the code.
+With the steps mentioned in the "How to get started" section you will build the default example, which is a very simple I2C example for the TLE493D-P3B6 sensor of the third generation. Following is an explanation on how you can change the example to your desired one. In order to do that, you simply have to change the value of the `#define EXAMPLE` macro in the `main.c` file to the desired example. You can see a list of all available examples in the `examples_t` enumeration found in `main.c`. The documentation of each example can be found in the corresponding folders in the `examples/` directory.
 
 Once you have decided for an example and changed the code accordingly, you can simply re-build the project and program your connected hardware again.
 
