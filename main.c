@@ -26,6 +26,11 @@ enum examples_t {
 
 /** Selected example */
 #define EXAMPLE		READ_IIC_SENSOR
+// #define EXAMPLE		READ_IIC_SENSOR_WITH_WAKEUP
+// #define EXAMPLE		READ_3_EQUAL_IIC_SENSORS
+// #define EXAMPLE		READ_3_DIFFERENT_IIC_SENSORS
+// #define EXAMPLE		READ_IIC_A1B6_EXTENDED_ADDRESSES
+// #define EXAMPLE		READ_SPI_SENSOR
 
 int main(void)
 {
